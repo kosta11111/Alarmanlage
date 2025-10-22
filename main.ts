@@ -19,7 +19,6 @@ function sendeDaten (status: number) {
 let objektVorhanden = 0
 let msBeiLetztemSenden = 0
 let spaeterSenden = false
-let sendeErlaubnis = false
 IoTCube.LoRa_Join(
 eBool.enable,
 eBool.enable,
