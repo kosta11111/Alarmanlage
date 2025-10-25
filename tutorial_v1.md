@@ -6,7 +6,7 @@ sensors=github:Smartfeld/pxt-sensorikAktorikSmartfeld
 # Ultraschallsensor, Lautsprecher & Dashboard
 
 ## Willkommen!
-
+![Tutorialbild](shot_13.png)
 In diesem Tutorial lernst du den eingebauten Lautsprecher und denn 
 Ultraschallsensor, sowie das Dashboard für IoT-Projekte kennen. Am Ende des 
 Tutorials hast du eine Alarmanlage, die bei einem Diebstahl deines bewachten Objekts
@@ -15,7 +15,7 @@ einen Alarm abgibt und dich das über das Dashboard wissen lässt.
 ## Wichtig! @showdialog
 Stecke den Ultraschallsensor am Port J2 an, um Fehler zu vermeiden!
 
-Falls du Probleme beim Tutorial hast, kannst du beim Klicken auf der Glühbirne sehen,
+Falls du Probleme beim Tutorial hast, kannst du beim klicken auf der Glühbirne sehen,
 wie der Code ausschauen soll.
 
 ## Schritt 1
@@ -49,8 +49,41 @@ basic.forever(function () {
     } 
 })
 ```
-
 ## Schritt 3
+
+Der IoT-Cube funktioniert jetzt als eine Alarmanlage, aber man kann diese nicht deaktivieren.
+Das Feature implementieren wir mit den A + B Knöpfen.
+
+* Ziehe den ``||input: Wenn Knopf A geklickt||`` zwei mal in das Programm und ändere 
+bei einem der beiden Codeblöcken den Buchstaben auf ein B um.
+* Erstelle eine neue ``||Variables:Variable||`` namens **"aktiv"**. Setze sie mit 
+den Codeblöcken der gleichen Kategorie beim Betätigen von A auf 1 und beim Klicken 
+von B auf 0.
+* Füge den ``||loops:während||`` Codeblock in den ``||basic:dauerhaft||`` Block 
+und Ziehe den dort bereits stehenden Code in die Schleife.
+* Ziehe in den Parameter der Schleife die neue Variable ``||Variables:aktiv||``
+rein.
+
+Drücke auf A, um die Alarmanlage einzuschalten und B um sie zu deaktivieren.
+
+```blocks
+input.onButtonPressed(Button.A, function () {
+    aktiv = 1
+})
+
+input.onButtonPressed(Button.B, function () {
+    aktiv = 0
+})
+
+basic.forever(function () {
+    while (aktiv) {
+        if (smartfeldSensoren.measureInCentimetersV2(DigitalPin.P1) > 10) {
+            music.play(music.tonePlayable(262, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
+        } 
+    }
+})
+```
+## Schritt 4
 
 Jetzt haben wir zwar eine Alarmanlage, aber noch keine Verbindung mit der Claviscloud.
 Das wollen wir jetzt ändern. 😉
@@ -75,7 +108,7 @@ while (!(IoTCube.getStatus(eSTATUS_MASK.JOINED))) {
 }
 basic.showIcon(IconNames.Yes)
 ```
-## Schritt 4
+## Schritt 5
 
 Nun bauen wir eine Funktion, mit der wir Daten an die Claviscloud und so zum Dashboard
 schicken können. Davor erstellst du 3 ``||variables:Variablen |`` mit dem Namen
@@ -99,7 +132,7 @@ sendeErlaubnis = false
 msBeiLetztemSenden = control.millis()
 ```
 
-## Schritt 5
+## Schritt 6
 
 Da wir unsere Variablen für die Funktion haben, erstellst du jetzt eine neue
 ``||functions:Funktion||`` mit dem namen **sendeDaten** mit 
@@ -108,7 +141,7 @@ einer Zahl als Parameter namens **status** und befolgst folgende Schritte.
 * Zieh eine ``||logic:Wenn-Abfrage mit ansonsten||`` in die Funktion, die abfragt,
 ob ``||control:Millisekunden||`` größer ist als die
 ``||variables: msBeiLetztemSenden |`` und addierst zur variable per 
-``||math: + ||`` 10000, indem du den Matheblock in die rechte Seite der Abfrage ziehst.
+``||math: + ||`` 5000, indem du den Matheblock in die rechte Seite der Abfrage ziehst.
 * Zieh den ``||IoTCube:Wahrheitswert||`` Block mit **ID_0 = status** in die Abfrage rein
 und sende mit dem ``||IoTCube:sende Daten||`` Block die Daten zur Claviscloud
 * Setze danach ``||variables: spaeterSenden |`` auf falsch und die
@@ -117,7 +150,7 @@ ansonsten setzt du ``||variables: spaeterSenden |`` auf wahr.
 
 ```blocks
 function sendeDaten (status: number) {
-    if (control.millis() > msBeiLetztemSenden + 10000) {
+    if (control.millis() > msBeiLetztemSenden + 5000) {
         IoTCube.addBinary(eIDs.ID_0, status)
         IoTCube.SendBufferSimple()
         spaeterSenden = false
@@ -127,7 +160,7 @@ function sendeDaten (status: number) {
     }
 }
 ```
-## Schritt 6
+## Schritt 7
 
 Da du jetzt weißt, wie man ``||functions:Funktion||`` erstellt, machen wir zwei neue
 mit dem Namen **objektSicher** und **objektGeklaut**.
@@ -149,7 +182,7 @@ function objektGeklaut () {
 }
 ```
 
-## Schritt 7
+## Schritt 8
 
 Nun haben wir unsere zwei Funktionen, welche unserem Dashboard bescheid geben,
 ob unser Objekt vom Ultraschallsensor erfasst wird, oder geklaut wurde.
@@ -185,7 +218,7 @@ basic.forever(function () {
     }
 })
 ```
-## Schritt 8
+## Schritt 9
 
 Um sicherzugehen, dass die Daten verlässlich gesendet wurden, machen wir eine Schleife
 die prüft ob die Daten beim Aufrufen der Funktion geschickt wurden .
@@ -208,7 +241,5 @@ loops.everyInterval(500, function () {
 Du hast deine Alarmanlage fertigprogrammiert! Gehe auf 
 [Claviscloud](https://iot.claviscloud.ch/), um dein IoT-Cube mit dem 
 Alarmanlagen-Widget zu verbinden und schau, ob sich der Status des Widgets richtig
-ändert. Was passiert, wenn du einen Gegenstand vor den Ultraschallsensor hinlegst? 
-Was wenn du Ihn wieder wegnimmst?
+ändert. Was passiert, wenn du einen Gegenstand vor den Ultraschallsensor hinlegst?
 Was passiert, wenn du diesen dann wegnimmst?
-
