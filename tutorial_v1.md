@@ -6,7 +6,6 @@ sensors=github:Smartfeld/pxt-sensorikAktorikSmartfeld
 # Ultraschallsensor, Lautsprecher & Dashboard
 
 ## Willkommen!
-![Tutorialbild](shot_13.png)
 In diesem Tutorial lernst du den eingebauten Lautsprecher und denn 
 Ultraschallsensor, sowie das Dashboard für IoT-Projekte kennen. Am Ende des 
 Tutorials hast du eine Alarmanlage, die bei einem Diebstahl deines bewachten Objekts
@@ -14,7 +13,7 @@ einen Alarm abgibt und dich das über das Dashboard wissen lässt.
 
 ## Wichtig! @showdialog
 Stecke den Ultraschallsensor am Port J2 an, um Fehler zu vermeiden!
-
+![Tutorialbild](Image (1).jpeg)
 Falls du Probleme beim Tutorial hast, kannst du beim klicken auf der Glühbirne sehen,
 wie der Code ausschauen soll.
 
