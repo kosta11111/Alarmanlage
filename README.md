@@ -1,14 +1,12 @@
 
 > Diese Seite bei [https://kosta11111.github.io/alarmanlage/](https://kosta11111.github.io/alarmanlage/) öffnen
 
-## Als Erweiterung verwenden
+## Als Tutorial öffnen
 
-Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
+Dieses Repository kann als **Tutorial** in MakeCode gestartet werden.
 
-* öffne [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/kosta11111/alarmanlage** suchen und importieren
+* öffne das [Tutorial für die Alarmanlage](https://makecode.microbit.org/#tutorial:github:kosta11111/Alarmanlage/tutorial_v1)
+* Gehe die einzelnen Schritte durch
 
 ## Dieses Projekt bearbeiten
 
