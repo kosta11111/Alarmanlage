@@ -13,7 +13,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "main.py"
+        "main.py",
+        "tutorial_v1.md"
     ],
     "testFiles": [
         "test.ts"
