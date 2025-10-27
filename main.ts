@@ -10,7 +10,7 @@ input.onButtonPressed(Button.A, function () {
     aktiv = 1
 })
 function sendeDaten (status: number) {
-    if (control.millis() > msBeiLetztemSenden + 10000) {
+    if (control.millis() > msBeiLetztemSenden + 5000) {
         IoTCube.addBinary(eIDs.ID_0, status)
         IoTCube.SendBufferSimple()
         spaeterSenden = false
@@ -45,7 +45,7 @@ loops.everyInterval(500, function () {
     }
 })
 basic.forever(function () {
-    while (aktiv == 1) {
+    while (aktiv) {
         if (smartfeldSensoren.measureInCentimetersV2(DigitalPin.P1) > 10) {
             music.play(music.tonePlayable(262, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
             objektGeklaut()
