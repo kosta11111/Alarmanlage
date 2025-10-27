@@ -17,6 +17,7 @@ Stecke den Ultraschallsensor am Port J2 an, um Fehler zu vermeiden!
 
 Falls du Probleme beim Tutorial hast, kannst du beim klicken auf der Glühbirne sehen,
 wie der Code ausschauen soll.
+![Tutorialbild](Glühbirne.png)
 
 ## Schritt 1
 
