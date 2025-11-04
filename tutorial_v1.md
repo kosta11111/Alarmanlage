@@ -1,3 +1,9 @@
+---
+# metadata
+title: Alarmanlage
+description: Baue eine Alarmanlage mit Ultraschallsensor und Lautsprecher
+---
+
 ```package
 iot-cube=github:Smartfeld/pxt-iot-cube#v1.1.2
 sensors=github:Smartfeld/pxt-sensorikAktorikSmartfeld
@@ -17,7 +23,7 @@ Stecke den Ultraschallsensor am Port J2 an, um Fehler zu vermeiden!
 
 Falls du Probleme beim Tutorial hast, kannst du beim klicken auf der Glühbirne sehen,
 wie der Code ausschauen soll.
-![Tutorialbild](https://github.com/kosta11111/Alarmanlage/blob/master/Gl%C3%BChbirne.png?raw=true)
+![Tutorialbild](https://raw.githubusercontent.com/kosta11111/Alarmanlage/main/Glühbirne.png)
 
 ## Schritt 1
 
