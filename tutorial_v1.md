@@ -1,9 +1,3 @@
----
-# metadata
-title: Alarmanlage
-description: Baue eine Alarmanlage mit Ultraschallsensor und Lautsprecher
----
-
 ```package
 iot-cube=github:Smartfeld/pxt-iot-cube#v1.1.2
 sensors=github:Smartfeld/pxt-sensorikAktorikSmartfeld
