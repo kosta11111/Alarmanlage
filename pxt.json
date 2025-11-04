@@ -14,7 +14,9 @@
         "main.ts",
         "README.md",
         "main.py",
-        "tutorial_v1.md"
+        "tutorial_v1.md",
+        "Glühbirne.png",
+        "Img.png"
     ],
     "testFiles": [
         "test.ts"
