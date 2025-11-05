@@ -6,18 +6,19 @@ sensors=github:Smartfeld/pxt-sensorikAktorikSmartfeld
 # Alarmanlage
 
 ## Willkommen!
-In diesem Tutorial lernst du den eingebauten Lautsprecher und denn 
-Ultraschallsensor, sowie das Dashboard für IoT-Projekte kennen. Am Ende des 
-Tutorials hast du eine Alarmanlage, die bei einem Diebstahl deines bewachten Objekts
+In diesem Tutorial entwickelst du eine Alarmanlage, die bei einem Diebstahl deines bewachten Objekts
 einen Alarm abgibt und dich das über das Dashboard wissen lässt.
 
 ## Wichtig! @showdialog
-Stecke den Ultraschallsensor am Port J2 an, um Fehler zu vermeiden!
+Stecke den **Ultraschallsensor** am **Port J2** an, um Fehler zu vermeiden!
 ![Tutorialbild](Img.png)
 
-Falls du Probleme beim Tutorial hast, kannst du beim klicken auf der Glühbirne sehen,
-wie der Code ausschauen soll.
+Falls du **Probleme** beim Tutorial hast, kannst du beim klicken auf der **Glühbirne** sehen,
+**wie der Code ausschauen soll.**
 ![Tutorialbild](https://github.com/kosta11111/Alarmanlage/blob/master/Gl%C3%BChbirne.png?raw=true)
+
+**Ziehe** das Tutorialfenster am Rand größer **ODER** **scroll** mit der Maus im Fenster immer **runter**,
+um keine Zwischenschritte zu verpassen.
 
 ## Schritt 1
 
@@ -35,9 +36,9 @@ basic.forever(function () {
 ## Schritt 2
 
 Jetzt wollen wir, dass der Cube einen Alarm schlägt, wenn der Ultraschallsensor
-nichts mehr in 10 cm reichweite erkennt.
+nichts in 10 cm Reichweite erkennt.
 
-* Ziehe den ``||logic:Vergleichscodeblock||`` in den Hexagon der Wenn-Abfrage rein.
+* Ziehe den ``||logic:Vergleichscodeblock||`` in das Sechseck der Wenn-Abfrage rein.
 * Benutze den ``||smartfeldSensoren:Distanz in cm||`` Codeblock, um zu prüfen,
 ob der gemessene Wert größer als 10 ist.
 * ``||music:spiele Ton||`` kommt in die Abfrage. Änder den Schlag auf 1/2, um einen
