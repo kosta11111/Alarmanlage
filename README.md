@@ -5,7 +5,7 @@
 
 Dieses Repository kann als **Tutorial** in MakeCode gestartet werden.
 
-* öffne das [Tutorial für die Alarmanlage](https://makecode.microbit.org/#tutorial:github:kosta11111/Alarmanlage/tutorial_v1)
+* öffne das [Tutorial für die Alarmanlage](https://makecode.microbit.org/#tutorial:github:kosta11111/Alarmanlage/docs/tutorials/tutorial_v1)
 * Gehe die einzelnen Schritte durch
 
 ## Dieses Projekt bearbeiten
